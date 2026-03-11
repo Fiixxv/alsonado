@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Manrope:wght@200;400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #070707;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navb {
+            font-size: 20px;
+            color: rgb(167, 167, 167);
+            font-family: "Manrope", sans-serif;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .navb:hover {
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+        }
+        .navbar nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            position: fixed;
+            width: 100%;
+            backdrop-filter: blur(3px);
+            z-index: 100;
+        }
+
+        /* ===== HOME ===== */
+        .home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            height: 100vh;
+        }
+        .hometext {
+            font-size: 25px;
+            font-family: "Dancing Script", cursive;
+            display: flex;
+            flex-direction: column;
+            margin-left: 30vh;
+            color: gray;
+        }
+        .hometext h2 {
+            margin-bottom: 0;
+            animation: bom 1s ease-out forwards;
+            animation-delay: 0.1s;
+        }
+        .hometext h1 {
+            font-size: 65px;
+            margin-bottom: 0;
+            margin-top: 0;
+            animation: bom 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        .hometext h3 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            animation: bom 1.5s ease-in forwards;
+            animation-delay: 1s;
+        }
+        .myname {
+            display: inline-block;
+            background: linear-gradient(180deg, rgb(0, 0, 0), rgb(244, 246, 248), rgb(0, 0, 0));
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 100px;
+        }
+
+        /* Get In Touch button - full width */
+        .wholebutton {
+            display: block;
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid rgb(103, 101, 105);
+            background-color: #070707;
+            text-decoration: none;
+            width: 80%;
+        }
+        .buttonbutton {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            color: rgb(197, 190, 190);
+            font-weight: 400;
+        }
+
+        /* ===== ABOUT ===== */
+        .Mabout {
+            margin-bottom: 5vh;
+        }
+        .about {
+            display: flex;
+            height: 110vh;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        .myimg img {
+            border-radius: 50%;
+            margin-left: 200px;
+            width: 350px;
+            height: 350px;
+            padding: 5px;
+            background: linear-gradient(45deg, #686768, #4a4a4b, #2f2e30);
+            border: 3px solid transparent;
+            box-shadow: 0 0 20px rgba(39, 39, 39, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .myimg img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+        .aboutinfo {
+            border-left: 2px solid rgb(78, 77, 78);
+            padding-left: 40px;
+        }
+        .aboutabout {
+            border: 3px solid rgb(99, 97, 100);
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 9999px;
+            font-family: "Manrope", sans-serif;
+            font-weight: 200;
+            display: inline-block;
+            background: linear-gradient(0deg, rgb(200, 200, 200), rgb(107, 107, 107));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .abouttext {
+            color: white;
+            margin-right: 100px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 23px;
+            padding: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            background-color: #070707;
+        }
+        .abouticon {
+            color: rgb(158, 157, 157);
+            align-items: center;
+            margin-top: 20px;
+            font-family: "Montserrat", sans-serif;
+            gap: 20px;
+            display: flex;
+            width: fit-content;
+        }
+        .abouticon h3 {
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+        }
+
+        /* ===== EDUCATION ===== */
+        .education {
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .educationeducation {
+            color: transparent;
+            text-align: center;
+            font-size: 20px;
+            border: 3px solid rgb(89, 89, 90);
+            display: inline-block;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-family: "Manrope", sans-serif;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, rgb(57, 57, 58), rgb(195, 194, 199), rgb(69, 69, 70), rgb(184, 184, 185));
+            -webkit-background-clip: text;
+        }
+        .educationsubhead {
+            display: flex;
+            gap: 40px;
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid rgb(121, 116, 116);
+            background: linear-gradient(90deg, rgb(201, 200, 200), rgb(130, 130, 130), rgb(220, 220, 220));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .educationtext {
+            color: rgb(173, 164, 164);
+            font-family: "Manrope", sans-serif;
+            text-align: left;
+            border-left: 2px solid rgb(83, 83, 83);
+            padding: 50px;
+            font-size: 25px;
+        }
+        .educationtext h3 {
+            color: #c0bbc4;
+        }
+
+        /* ===== WORKS ===== */
+        .workhead {
+            background: linear-gradient(90deg, rgb(243, 237, 237), rgb(88, 88, 88), rgb(161, 161, 161));
+            -webkit-background-clip: text;
+            color: transparent;
+            border: 3px solid rgb(105, 104, 104);
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 9999px;
+            display: block;
+            width: max-content;
+            text-align: center;
+            margin: auto;
+            margin-top: 100px;
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+        }
+        .works {
+            margin: 4em auto;
+            padding: 0 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .work-box {
+            background-color: #111;
+            aspect-ratio: 4/3;
+            border-radius: 10px;
+            border: 2px solid rgb(149, 148, 150);
+            overflow: hidden;
+        }
+        .work-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .work-box img:hover {
+            transform: scale(1.08);
+            opacity: 0.85;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Manrope", sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .contact h1 {
+            border: 3px solid #686768;
+            border-radius: 9999px;
+            padding: 20px;
+            font-size: 40px;
+            background: linear-gradient(180deg, rgb(187, 186, 186), rgb(41, 41, 41));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .contact h2 {
+            font-size: 35px;
+            color: #c7c5c7;
+        }
+        .contact p {
+            color: #929192;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            border: 3px solid rgb(95, 92, 92);
+            padding: 30px;
+            width: 500px;
+            gap: 30px;
+            border-radius: 35px;
+            background-color: rgba(54, 54, 54, 0.4);
+        }
+        .contact label {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            color: white;
+            gap: 5px;
+        }
+        textarea, input {
+            border: 1px solid rgb(128, 127, 127);
+            padding: 10px;
+            font-size: 20px;
+            background-color: #474747;
+            color: white;
+            resize: none;
+            border-radius: 10px;
+        }
+        .nam {
+            height: 35px;
+        }
+        button {
+            padding: 10px;
+            background-color: #dad7da;
+            color: #000000;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            font-family: "Manrope", sans-serif;
+        }
+
+        /* ===== FOOTER ===== */
+        .foot1 {
+            margin-top: 100px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Manrope", sans-serif;
+            background-color: #47474741;
+            border-top: 1px solid rgb(104, 104, 104);
+        }
+        .foot1 p {
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+        .foot1 h1 {
+            background: linear-gradient(90deg, rgb(180, 180, 180), rgb(100, 100, 100), rgb(220, 220, 220));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        footer {
+            background-color: #47474741;
+            color: #555;
+            padding: 20px;
+            text-align: center;
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+        }
+
+        /* ===== MISC ===== */
+        .line {
+            width: 80%;
+            height: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.308);
+            margin: 0 auto;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes bom {
+            0%   { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <nav>
+            <a href="#Home" class="navb">HOME</a>
+            <a href="#About" class="navb">ABOUT</a>
+            <a href="#Education" class="navb">EDUCATION</a>
+            <a href="#Works" class="navb">WORKS</a>
+            <a href="#Contact" class="navb">CONTACT</a>
+        </nav>
+    </div>
+
+    <!-- HOME -->
+    <div class="home" id="Home">
+        <div class="hometext">
+            <h2>Hello! my name is,</h2>
+            <h1>
+                <span class="myname">V</span><span class="myname">i</span><span class="myname">n</span><span class="myname">c</span><span class="myname">e</span>
+                <span class="myname">A</span><span class="myname">l</span><span class="myname">s</span><span class="myname">o</span><span class="myname">n</span><span class="myname">a</span><span class="myname">d</span><span class="myname">o</span>
+            </h1>
+            <h3>Welcome to my website.*</h3>
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <!-- ABOUT -->
+    <div class="Mabout">
+        <div class="about" id="About">
+            <div class="myimg">
+                <img src="https://i.imgur.com/kWeul94.jpeg" alt="Vince Alsonado">
+            </div>
+            <div class="aboutinfo">
+                <div class="aboutabout">
+                    <h1>About Me</h1>
+                </div>
+                <div class="abouttext">
+                    <p>I'm <span style="color: #ddd;">Vince Alsonado</span>, a passionate and driven student currently taking up programming at <span style="color: #aaa;">SHS San Nicholas III.</span> I discovered my love for building things on the web early on, and since then I haven't stopped exploring.<br><br>
+                    I have a deep interest in <span style="color: #aaa;">CSS</span> and front-end design — I believe that the way something looks and feels is just as important as how it works. I enjoy crafting visuals that are clean, intentional, and satisfying to interact with. Every project I work on pushes me to grow more as a developer and as a creative.<br><br>
+                    I'm still early in my journey, but I approach every challenge with patience, curiosity, and a genuine desire to improve. I believe that consistency and passion will take me far. If you share the same drive to create something meaningful, I'd love to collaborate and build something we can both be proud of.</p>
+                </div>
+                <div class="abouticon">
+                    <h3>SHS in San Nicholas III</h3>
+                </div>
+                <div class="abouticon">
+                    <h3>ICT - Programming</h3>
+                </div>
+            </div>
+        </div>
+        <hr class="line">
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="education" id="Education">
+        <div class="educationeducation">
+            <h1>Education</h1>
+        </div>
+        <div class="educationsubhead">
+            <h2>SHS In San Nicholas III</h2>
+        </div>
+        <div class="educationtext">
+            <h3>— 2025 | Started</h3>
+            <li>Enrolled in ICT — Programming track</li>
+            <li>Introduced to HTML & CSS fundamentals</li>
+            <li>Built first web pages and personal projects</li>
+            <li>Started exploring layout design and visual styling</li>
+            <li>Developing a strong foundation in front-end development</li>
+            <li>Continuously learning and expanding programming knowledge</li>
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <!-- WORKS -->
+    <div class="workhead">
+        <h1>Works</h1>
+    </div>
+
+    <div class="works" id="Works">
+        <div class="work-box">
+            <img src="https://i.imgur.com/H5w5ltt.png" alt="Work 1">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/GOyO9EG.png" alt="Work 2">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/FDWrPa1.png" alt="Work 3">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/HzXRItn.png" alt="Work 4">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/nyNFp9V.png" alt="Work 5">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/wRTeuCd.jpeg" alt="Work 6">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/US83a72.png" alt="Work 7">
+        </div>
+        <div class="work-box">
+            <img src="https://i.imgur.com/99GeKxY.png" alt="Work 8">
+        </div>
+    </div>
+
+    <br><br>
+    <hr class="line">
+
+    <!-- CONTACT -->
+    <div class="contact" id="Contact">
+        <h1>Contact</h1>
+        <h2>Connect with me!</h2>
+        <p>Whether it's a project, a collaboration, or just a conversation — I'm always open to new connections. Let's create something worth remembering.</p>
+        <form action="https://formspree.io/f/xzzvlqqr" method="POST">
+            <label>Name<textarea name="name" class="nam" required></textarea></label>
+            <label>Email<input type="email" name="email" required></label>
+            <label>Message<textarea name="message" required></textarea></label>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="foot1">
+        <h1>Vince Alsonado</h1>
+        <p>Thanks for visiting my portfolio website.</p>
+        <hr class="line">
+    </div>
+
+    <footer>Copyright © 2025 Vince Alsonado. All rights reserved.</footer>
+
+</body>
+</html>
